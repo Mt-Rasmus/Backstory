@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Header correctly 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="header__content"
+    >
+      <[object Object]
+        className="header__title"
+        to="/dashboard"
+      >
+        <h1>
+          Backstory
+        </h1>
+      </[object Object]>
+      <div
+        className="header__title"
+      >
+        <h1>
+          How to Play
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+`;

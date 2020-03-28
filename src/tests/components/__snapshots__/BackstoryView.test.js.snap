@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render BackstoryView correctly 1`] = `
+<div>
+  <button
+    className="button button--standard button-modal"
+  >
+    Premise
+  </button>
+  <input
+    id="vehicle1"
+    type="checkbox"
+  />
+  <label
+    htmlFor="vehicle1"
+  >
+    solved
+  </label>
+  <br />
+</div>
+`;

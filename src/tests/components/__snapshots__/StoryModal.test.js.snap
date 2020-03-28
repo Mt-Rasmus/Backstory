@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render StoryModal correctly 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={200}
+  isOpen={false}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <button
+    className="button button--standard button-modal"
+  >
+    x
+  </button>
+  <h3
+    className="modal__title"
+  >
+    Title of first story
+  </h3>
+  <PremiseView
+    premise="A premise to a story"
+    toggleShowBackstory={[Function]}
+  />
+</Modal>
+`;

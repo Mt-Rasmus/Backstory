@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render StartPage correctly 1`] = `
+<div
+  className="content-container"
+>
+  <[object Object]
+    to="/stories"
+  >
+    <button
+      className="button button--standard"
+    >
+      Stories
+    </button>
+  </[object Object]>
+  <button
+    className="button button--standard"
+    onClick={[Function]}
+  >
+    How to play
+  </button>
+  <div>
+    <InstructionsModal
+      handleToggleModal={[Function]}
+      showModal={false}
+    />
+  </div>
+</div>
+`;

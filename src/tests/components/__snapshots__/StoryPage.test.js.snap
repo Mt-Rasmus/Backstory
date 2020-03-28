@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render StoryPage correctly 1`] = `
+<div>
+  <div
+    className="content-container"
+    onClick={[Function]}
+  >
+    <p>
+      Title of first story
+    </p>
+  </div>
+  <div>
+    <input
+      id="vehicle1"
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="vehicle1"
+    >
+      solved
+    </label>
+    <br />
+  </div>
+  <div>
+    <StoryModal
+      handleCloseStoryModal={[Function]}
+      showModal={false}
+      story={
+        Object {
+          "backstory": "The backstory",
+          "id": "1",
+          "premise": "A premise to a story",
+          "title": "Title of first story",
+        }
+      }
+      toggleSolved={[Function]}
+    />
+  </div>
+</div>
+`;
