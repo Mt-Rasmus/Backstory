@@ -1,0 +1,26 @@
+
+.start-options-layout {
+   background-color: $darkest-grey;
+   background-size: cover;
+   //height: calc(100vh - 7.2rem);  /* set to 100% of viewport height */
+   //width: 100vw; /* set to 100% of viewport width */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.start-options-layout__box {
+   position: absolute;
+   top: 30%;
+   background: none;
+   border-radius: 3px;
+   padding: $xl-size $l-size;
+   text-align: center;
+   width: 40rem;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   @media (min-width: $desktop-breakpoint) {
+      background: $darker-grey;
+   }
+}

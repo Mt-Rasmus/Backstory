@@ -5,7 +5,6 @@ import StartPage from './StartPage';
 
 const DashboardPage = () => (
    <div>
-      <Header />
       <StartPage />
    </div>
 );

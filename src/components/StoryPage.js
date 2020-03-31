@@ -12,6 +12,17 @@ export default class StoryPage extends React.Component {
       };
    }
 
+   componentDidMount = () => {
+      const isSolved = localStorage.getItem(`story${this.props.story.id}_solved`);
+      if(isSolved !== null) {
+         if(isSolved === "true") {
+            this.setState({ solved: true });
+         } else if (isSolved === "false") {
+            this.setState({ solved: false });
+         }
+      }
+   }
+
    handleShowStoryModal = () => {
       this.setState({ showStoryModal: true });
    }  
@@ -21,27 +32,36 @@ export default class StoryPage extends React.Component {
    }
 
    toggleSolved = () => {
-      this.setState({ solved: !this.state.solved });
+      if(this.state.solved === true) {
+         this.setState({ solved: false });
+         localStorage.setItem(`story${this.props.story.id}_solved`, JSON.stringify(false));
+      }
+      else if (this.state.solved === false) {
+         this.setState({ solved: true });
+         localStorage.setItem(`story${this.props.story.id}_solved`, JSON.stringify(true));
+      }
    }
 
    render() {
       return (
-         <div>
-            <div onClick={this.handleShowStoryModal} className="content-container">
-               <p>{this.props.story.title}</p>
+         <div className="list-body" >
+            <div className="list-item" onClick={this.handleShowStoryModal}>
+               <div className="list-item__title-container">
+                  <img src={'/images/scratch_red1.png'} className="scratch-icon" alt=""/>
+                  <p className="list-item__title">{this.props.story.title}</p>
+               </div>
+            <img src={'/images/test1.png'} alt="" className="icon"/>
+            {this.state.solved ? <p>solved</p> : <p style={{opacity: "0"}}>solved</p>}
             </div>
-            <div>
-               <input type="checkbox" id="vehicle1" onClick={this.toggleSolved}></input>
-               <label htmlFor="vehicle1">solved</label><br></br>
-            </div>
-            <div>
-               <StoryModal 
-                  showModal={this.state.showStoryModal} 
-                  handleCloseStoryModal={this.handleCloseStoryModal} 
-                  toggleSolved={this.toggleSolved}
-                  story={this.props.story}
-               />           
-            </div>
+               <div>
+                  <StoryModal 
+                     showModal={this.state.showStoryModal} 
+                     handleCloseStoryModal={this.handleCloseStoryModal}
+                     solved={this.state.solved}
+                     toggleSolved={this.toggleSolved}
+                     story={this.props.story} 
+                  />           
+               </div>         
          </div>
       )
    }

@@ -8,23 +8,32 @@
 }
 
 .button {
-   background: $purple;
+   background: $red;
    border-radius: 3px;
    color: white;
    display: inline-block; /* vertical margin and padding gets taken into effect. default inline. */
-   font-size: $font-size-large;
+   font-size: $font-size-xxl;
    font-weight: 300;
    padding: $s-size;
    margin-top: $s-size;
    border: none;
    text-decoration: none;
+   font-family: 'Averia Sans Libre', cursive;
    line-height: 1;
-   transition: all 0.1s ease-in-out;
+   transition: all 0.15s ease-in-out;
+}
+
+.button-big {
+   font-size: $font-size-xxxl;
+   padding: $n-size $m-size;
+   margin: $m-size 0;
+   transition: all 0.25s ease-in-out;
+   width: 100%
 }
 
 .button--standard {
    &:hover { // same as .list-item:hover 
-      background: lighten($purple, 8%);
+      background: lighten($red, 8%);
    }
 }
 
@@ -32,6 +41,36 @@
    background: none;
 }
 
-.button--secondary { /* button "modifier" (with two --) */
-   background: $grey;
+.button--cross { /* button "modifier" (with two --) */
+   float: right;
+   margin: 0;
+   padding: 0 $s-size;
+   font-size: $l-size;
+}
+
+.button--close {
+   cursor: pointer;
+   position: absolute;
+   right: 0.6rem;
+   top: 0.6rem;
+   width: 3.2rem;
+   height: 3.2rem;
+   opacity: 0.4;
+   &:hover {
+      opacity: 0.7;
+   }
+   &:before, &:after {
+      position: absolute;
+      left: 1.5rem;
+      content: ' ';
+      height: 3rem;
+      width: 0.2rem;
+      background-color: $off-white;
+   }
+   &:before {
+      transform: rotate(45deg);
+   }
+   &:after {
+      transform: rotate(-45deg);
+   }
 }

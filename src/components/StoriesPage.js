@@ -37,12 +37,17 @@ class StoriesPage extends React.Component {
          }
          else {
             return (
-               <div>
-               {
-                  this.state.stories.map((story) => {
-                     return <StoryPage key={story.id} story={story} />
-                  })
-               }
+               <div className="content-container">
+                  <div className="grid-container">
+                  {
+                     this.state.stories.map((story) => {
+                        return <StoryPage 
+                                 key={story.id} 
+                                 story={story} 
+                                />
+                     })
+                  }
+                  </div>
                </div>
             )
          }

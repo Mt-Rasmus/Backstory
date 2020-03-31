@@ -1,6 +1,6 @@
 
 .header {
-   background: $dark-blue;
+   background: $darker-grey;
 }
 
 .header__content {
@@ -11,9 +11,31 @@
 }
 
 .header__title {
+   font-family: 'IM Fell Double Pica', serif;
    color: white;
+   font-size: $font-size-xl;
    text-decoration: none;
+   &:hover {
+      text-shadow: 3px 3px $red;
+   }
    h1 {
       margin: 0;
+   }
+   @media (min-width: $desktop-breakpoint) {
+      font-size: $font-size-xxl;
+   }
+}
+
+.header__text {
+   font-family: 'IM Fell Double Pica', serif;
+   color: white;
+   font-size: $font-size-xl;
+   text-decoration: none;
+   cursor: pointer;
+   &:hover {
+      text-shadow: 2px 2px $red;
+   }
+   @media (min-width: $desktop-breakpoint) {
+      font-size: $font-size-xxl;
    }
 }

@@ -1,0 +1,36 @@
+
+.icon-container {
+   display: flex;
+   align-items: left;
+   justify-content: center;
+   flex-direction: column;
+   padding-top: $m-size;
+
+   @media (min-width: $desktop-breakpoint){ /* For desktop */
+      align-items: center;
+      flex-direction: row;
+   }
+}
+
+.icon-container-sub {
+   display: flex;
+   text-decoration: none;
+   font-size: $font-size-small;
+   color: $dark-grey;
+}
+
+.icon {
+   width: 22.5rem;
+   height: auto;
+   align-self: center;
+   transition: all 0.1s ease-in-out;
+   padding-bottom: $s-size;
+   filter: brightness(87%);
+}
+
+.scratch-icon {
+   top: 0;
+   width: 20rem;
+   height: auto;
+   transition: all 0.1s ease-in-out;
+}

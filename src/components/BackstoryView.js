@@ -3,15 +3,14 @@ import React from 'react';
 
 const BackstoryView = (props) => {
    return (
-      <div>
-         {props.backstory}
+      <div className="modal__body">
+         <p className="modal__subtitle">Backstory:</p>
+         <p className="modal__text">{props.backstory}</p>
          <button 
             className="button button--standard button-modal" 
             onClick={props.toggleShowBackstory}>
             Premise
-         </button>
-         <input type="checkbox" id="vehicle1" onClick={props.toggleSolved}></input>
-         <label htmlFor="vehicle1">solved</label><br></br>            
+         </button>        
       </div>
    )
 }

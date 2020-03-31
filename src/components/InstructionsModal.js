@@ -9,12 +9,13 @@ const InstructionsModal = (props) => {
          isOpen={props.showModal}
          onRequestClose={props.handleToggleModal} // clicking esc or outside modal
          closeTimeoutMS={200}
-         className="modal"
+         className="modal inner-modal"
+         style={{overlay:{backgroundColor:"rgba(0,0,0,0.25)"}}}
       >
          <p>
             These are the instructions
          </p>
-         <button className="button" onClick={props.handleToggleModal}>
+         <button className="button button--standard" onClick={props.handleToggleModal}>
             Close
          </button>
       </Modal>
@@ -22,3 +23,4 @@ const InstructionsModal = (props) => {
 }
 
 export default InstructionsModal;
+
