@@ -57,6 +57,14 @@
    margin: 0 0 $s-size 0;
 }
 
+.modal__text-big {
+   //margin: 0 0 $s-size 0;
+   font-size: $font-size-medium;
+   @media (min-width: $desktop-breakpoint) {
+      font-size: $font-size-xl;
+   }
+}
+
 .modal__body {
    display: flex;
    flex-direction: column;

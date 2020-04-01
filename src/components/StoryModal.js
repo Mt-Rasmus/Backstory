@@ -33,7 +33,8 @@ export default class StoryModal extends React.Component {
                   <img src={'/images/scratch_red1.png'} className="scratch-icon" alt=""/>
                   <p className="list-item__title">{this.props.story.title}</p>
                </div>
-               <img src={'/images/test1.png'} className="icon"/>
+               {}
+               <img src={`/images/premises/premise${this.props.story.id}.png`} alt="" className="icon"/>
                {!this.state.showBackstory
                   ? <PremiseView premise={this.props.story.premise} toggleShowBackstory={this.toggleShowBackstory} />
                   : <BackstoryView backstory={this.props.story.backstory} toggleShowBackstory={this.toggleShowBackstory} />  

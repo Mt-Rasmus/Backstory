@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Modal from 'react-modal';
+import instructions from '../fixtures/instructions';
 if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#app');
 
 const InstructionsModal = (props) => {
@@ -12,8 +13,8 @@ const InstructionsModal = (props) => {
          className="modal inner-modal"
          style={{overlay:{backgroundColor:"rgba(0,0,0,0.25)"}}}
       >
-         <p>
-            These are the instructions
+         <p className="modal__text-big">
+            {instructions}
          </p>
          <button className="button button--standard" onClick={props.handleToggleModal}>
             Close
