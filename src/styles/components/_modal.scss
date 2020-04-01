@@ -15,6 +15,7 @@
 
 .ReactModalPortal .ReactModal__Overlay--after-open {
    opacity: 1;
+   overflow: hidden;
 }
 
 .ReactModalPortal .ReactModal__Overlay--before-close { // Used along with closeTimeoutMS prop in OptionModal.js
@@ -23,6 +24,11 @@
 
 .ReactModal__Content .ReactModal__Content--after-open {
    max-width: 30rem;
+   overflow-y: auto;
+}
+.ReactModal__Content {
+   overflow-y: auto;
+   max-height: 95vh
 }
 
 .modal {
