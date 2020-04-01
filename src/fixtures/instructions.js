@@ -9,6 +9,6 @@ export default 'This game can be played with two or more people. \
                 They may only ask \'yes\' or \'no\' questions. \
                 The game leader may reply to questions where incorrect assumptions have been made \
                 with: \'You\'ve made an incorrect assumption\'. \
-                If someone in the group are too scared to play, then please go easy on them. \
+                If someone in the group is too scared to play, then please go easy on them. \
                 Just take a deep breath and try to understand that everyone may not have been blessed with \
                 your level of coolness.'

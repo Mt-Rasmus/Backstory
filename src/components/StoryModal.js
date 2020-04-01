@@ -18,11 +18,20 @@ export default class StoryModal extends React.Component {
       this.setState({showBackstory: !this.state.showBackstory})
    }
 
+   resetModal = () => {
+      this.props.handleCloseStoryModal();
+      setTimeout(() => {this.setState({showBackstory: false})}, 500);
+   }
+
+   toggleInTransitionClass = () => {
+      this.classList.toggle('rotate-div-in');
+  }
+
    render () {
       return (
          <Modal
             isOpen={this.props.showModal}
-            onRequestClose={this.props.handleCloseStoryModal} // clicking esc or outside modal
+            onRequestClose={this.resetModal} // clicking esc or outside modal
             closeTimeoutMS={200}      
             className="modal"
             style={{overlay:{backgroundColor:"rgba(0,0,0,0.3)"}}}
@@ -33,11 +42,9 @@ export default class StoryModal extends React.Component {
                   <img src={'/images/scratch_red1.png'} className="scratch-icon" alt=""/>
                   <p className="list-item__title">{this.props.story.title}</p>
                </div>
-               {}
-               <img src={`/images/premises/premise${this.props.story.id}.png`} alt="" className="icon"/>
                {!this.state.showBackstory
-                  ? <PremiseView premise={this.props.story.premise} toggleShowBackstory={this.toggleShowBackstory} />
-                  : <BackstoryView backstory={this.props.story.backstory} toggleShowBackstory={this.toggleShowBackstory} />  
+                  ? <PremiseView story={this.props.story} toggleShowBackstory={this.toggleShowBackstory} />
+                  : <BackstoryView story={this.props.story} toggleShowBackstory={this.toggleShowBackstory} />  
                }
                <div className="list-item__small-container">
                   <label className="list-item__small-text">Mark as solved:</label>

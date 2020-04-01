@@ -31,7 +31,14 @@
    max-height: 95vh
 }
 
+@keyframes modalFade {
+   from {transform: translateY(-50%); opacity: 0;}
+   to {transform: translateY(0); opacity: 1;}
+ }
+
 .modal {
+   animation-name: modalFade;
+   animation-duration: .6s;
    position: absolute;
    background: $mid-dark-grey;
    color: white;
@@ -47,11 +54,26 @@
    }
 }
 
+.modal-wide {
+   max-width: 32rem;
+   @media (min-width: $desktop-breakpoint) {
+      max-width: 70rem;
+   }
+}
+
 .modal__title {
    margin: 0 0 0;
    position: relative;
    text-align: center;
    //width: 75%;
+}
+
+.modal__title-instructions {
+   font-family: 'IM Fell Double Pica', serif;
+   color: white;
+   font-size: $font-size-xxl;
+   text-decoration: none;
+   margin-top: 0;
 }
 
 .modal__subtitle {
@@ -72,6 +94,7 @@
 }
 
 .modal__body {
+
    display: flex;
    flex-direction: column;
    word-break: break-word;
@@ -81,3 +104,23 @@
    padding: $l-size;
 }
 
+.modal-transition-in {
+   animation-name: fade-in;
+   animation-duration: 1.5s;
+}
+
+.modal-transition-out {
+   animation-name: fade-out;
+   animation-duration: .5s;
+}
+
+@keyframes fade-out {
+   from {opacity: 1;}
+   to {opacity: 0;}
+}
+
+@keyframes fade-in {
+   from {opacity: 0;}
+   to {opacity: 1;}
+}
+   

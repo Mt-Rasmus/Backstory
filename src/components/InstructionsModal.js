@@ -10,9 +10,10 @@ const InstructionsModal = (props) => {
          isOpen={props.showModal}
          onRequestClose={props.handleToggleModal} // clicking esc or outside modal
          closeTimeoutMS={200}
-         className="modal inner-modal"
+         className="modal inner-modal modal-wide"
          style={{overlay:{backgroundColor:"rgba(0,0,0,0.25)"}}}
       >
+         <h1 className="header__text">How to Play</h1>
          <p className="modal__text-big">
             {instructions}
          </p>
