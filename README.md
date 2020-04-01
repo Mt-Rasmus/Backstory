@@ -3,7 +3,7 @@
 Backstory is a social game.
 It can be played with two or more people.
 
-# How to play:
+## How to play:
 One person will act as game leader. 
 This person selects a story and reads its premise aloud to everyone. 
 The game leader then reads the backstory to him-/herself without revealing it to the group. 
