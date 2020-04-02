@@ -57,7 +57,6 @@ class StoriesPage extends React.Component {
                <div className="content-container">
                   <label 
                      className="list-item__small-text"
-                     onClick={this.filterStories}
                      >Show only unsolved stories:
                   </label>
                   <input 
