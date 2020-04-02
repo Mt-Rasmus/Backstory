@@ -1,9 +1,19 @@
 
 .icon-container {
-   width: 65%;
+   width: 70%;
    margin: 0 auto;
+   @media (min-width: $desktop-breakpoint) {
+      width: 65%;
+   }
 }
 
+.icon-container-modal {
+   width: 100%;
+   margin: 0 auto;
+   @media (min-width: $desktop-breakpoint) {
+      width: 65%;
+   }
+}
 .icon-container-sub {
    width: 100%;
    padding-top: calc((391%/447)*100);
@@ -22,7 +32,6 @@
    padding-bottom: $s-size;
    filter: brightness(87%);
 }
-
 
 .scratch-icon {
    top: 0;

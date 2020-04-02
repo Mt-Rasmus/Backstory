@@ -9,14 +9,14 @@ class StoriesPage extends React.Component {
       super(props);
       this._isMounted = false;
       this.state = {
-         stories: null
+         stories: null,
+         filterSolved: false
       };
    }
    componentDidMount() {
       this._isMounted = true;
-      this._asyncRequest = getStories().then(
+      getStories().then(
          stories => {
-            this._asyncRequest = null;
             if(this._isMounted) {
                this.setState({stories});
             }
@@ -26,6 +26,23 @@ class StoriesPage extends React.Component {
    
    componentWillUnmount() {
       this._isMounted = false;
+   }
+
+   filterStories = () => {
+      if (!this.state.filterSolved) {
+         let stories = [];
+         this.state.stories.map((story) => {
+            if(!localStorage.getItem(`story${story.id}_solved`))
+               return stories.push(story);
+         });
+         this.setState({stories, filterSolved: true});
+      } else {
+         getStories().then(
+            stories => {
+               this.setState({stories, filterSolved: false});
+            }
+         )
+      }
    }
 
    render () {
@@ -38,6 +55,16 @@ class StoriesPage extends React.Component {
          else {
             return (
                <div className="content-container">
+                  <label 
+                     className="list-item__small-text"
+                     onClick={this.filterStories}
+                     >Show only unsolved stories:
+                  </label>
+                  <input 
+                     className="list-item__checkbox" 
+                     type="checkbox" 
+                     onMouseDown={this.filterStories}
+                  />
                   <div className="grid-container">
                   {
                      this.state.stories.map((story) => {

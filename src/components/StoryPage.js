@@ -34,7 +34,7 @@ export default class StoryPage extends React.Component {
    toggleSolved = () => {
       if(this.state.solved === true) {
          this.setState({ solved: false });
-         localStorage.setItem(`story${this.props.story.id}_solved`, JSON.stringify(false));
+         localStorage.removeItem(`story${this.props.story.id}_solved`);
       }
       else if (this.state.solved === false) {
          this.setState({ solved: true });
@@ -55,9 +55,7 @@ export default class StoryPage extends React.Component {
                         <img src={`/images/premises/premise${this.props.story.id}.png`} alt="" className="icon"/>
                      </div>
                </div>
-
-            
-            {this.state.solved ? <p>solved</p> : <p style={{opacity: "0"}}>solved</p>}
+               {this.state.solved ? <p className="list-item__solved-text ">solved</p> : <p className="list-item__unsolved-text">solved</p>}
             </div>
                <div>
                   <StoryModal 

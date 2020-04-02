@@ -63,8 +63,20 @@
 
 .list-item__small-text {
    padding-right: $xs-size;
+   color: $off-white;
 }
 
 .list-item__checkbox {
    background-color: $medium-grey;
+   margin-top: $m-size;
+}
+
+.list-item__solved-text {
+   margin-top: 0;
+   color: #f7f7f7c5;
+}
+
+.list-item__unsolved-text {
+   margin-top: 0;
+   opacity: 0;
 }

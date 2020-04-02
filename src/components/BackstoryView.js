@@ -7,7 +7,7 @@ const BackstoryView = (props) => {
    }
    return (
       <div className="modal__body modal-transition-in">
-         <div className="icon-container">
+         <div className="icon-container-modal">
             <div className="icon-container-sub">
                <img onError={addDefaultSrc} className="icon"
                   src={`/images/backstories/backstory${props.story.id}.png`} alt=""/>
