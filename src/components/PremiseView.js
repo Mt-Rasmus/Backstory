@@ -4,7 +4,11 @@ import React from 'react';
 const PremiseView = (props) => {
    return (
       <div className="modal__body">
-         <img src={`/images/premises/premise${props.story.id}.png`} alt="" className="icon"/>
+         <div className="icon-container">
+            <div className="icon-container-sub">
+               <img src={`/images/premises/premise${props.story.id}.png`} alt="" className="icon"/>
+            </div>
+         </div>
          <p className="modal__subtitle">Premise:</p>
          <p className="modal__text">{props.story.premise}</p>
          <button 

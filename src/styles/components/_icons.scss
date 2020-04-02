@@ -1,32 +1,28 @@
 
 .icon-container {
-   display: flex;
-   align-items: left;
-   justify-content: center;
-   flex-direction: column;
-   padding-top: $m-size;
-
-   @media (min-width: $desktop-breakpoint){ /* For desktop */
-      align-items: center;
-      flex-direction: row;
-   }
+   width: 65%;
+   margin: 0 auto;
 }
 
 .icon-container-sub {
-   display: flex;
-   text-decoration: none;
-   font-size: $font-size-small;
-   color: $dark-grey;
+   width: 100%;
+   padding-top: calc((391%/447)*100);
+   position:relative;
+   height: 0;
+   //padding-top: 87%;
 }
 
 .icon {
-   width: 22.5rem;
+   width: 100%;
    height: auto;
-   align-self: center;
+   position: absolute;
+   bottom: 0;
+   left: 0;
    transition: all 0.1s ease-in-out;
    padding-bottom: $s-size;
    filter: brightness(87%);
 }
+
 
 .scratch-icon {
    top: 0;
