@@ -36,7 +36,7 @@ export default class StoryModal extends React.Component {
             className="modal"
             style={{overlay:{backgroundColor:"rgba(0,0,0,0.3)"}}}
          >
-            <span className="button--close" onClick={this.props.handleCloseStoryModal}></span>
+            <span className="button--close" onClick={this.resetModal}></span>
             <div className="inner-modal">
                <div className="modal__title">
                   <img src={'/images/scratch_red1.png'} className="scratch-icon" alt=""/>

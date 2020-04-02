@@ -52,8 +52,8 @@ export default class StoryPage extends React.Component {
                </div>
                   <div className="icon-container">
                      <div className="icon-container-sub">
-                     <img src={`/images/premises/premise${this.props.story.id}.png`} alt="" className="icon"/>
-                  </div>
+                        <img src={`/images/premises/premise${this.props.story.id}.png`} alt="" className="icon"/>
+                     </div>
                </div>
 
             
