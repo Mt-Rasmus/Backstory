@@ -1,7 +1,6 @@
 
 import React from 'react';
 import StoryModal from './StoryModal';
-import localForage from "localforage";
 
 export default class StoryPage extends React.Component {
 
@@ -14,25 +13,14 @@ export default class StoryPage extends React.Component {
    }
 
    componentDidMount = () => {
-      
-      localForage.getItem(`story${this.props.story.id}_solved`).then((isSolved) => {
-         if(isSolved !== null) {
-            //console.log(isSolved);
-            if(isSolved === "true") {
-               return this.setState({ solved: true });
-            } else if (isSolved === "false") {
-               return this.setState({ solved: false });
-            }
+      const isSolved = localStorage.getItem(`story${this.props.story.id}_solved`);
+      if(isSolved !== null) {
+         if(isSolved === "true") {
+            this.setState({ solved: true });
+         } else if (isSolved === "false") {
+            this.setState({ solved: false });
          }
-      })
-      //const isSolved = localForage.getItem(`story${this.props.story.id}_solved`);
-      // if(isSolved !== null) {
-      //    if(isSolved === "true") {
-      //       this.setState({ solved: true });
-      //    } else if (isSolved === "false") {
-      //       this.setState({ solved: false });
-      //    }
-      // }
+      }
    }
 
    handleShowStoryModal = () => {
@@ -47,11 +35,11 @@ export default class StoryPage extends React.Component {
       if(this.state.solved === true) {
          this.setState({ solved: false });
          console.log('remove');
-         localForage.removeItem(`story${this.props.story.id}_solved`);
+         localStorage.removeItem(`story${this.props.story.id}_solved`);
       }
       else if (this.state.solved === false) {
          this.setState({ solved: true });
-         localForage.setItem(`story${this.props.story.id}_solved`, JSON.stringify(true));
+         localStorage.setItem(`story${this.props.story.id}_solved`, JSON.stringify(true));
       }
    }
 

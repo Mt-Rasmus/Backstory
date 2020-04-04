@@ -3,7 +3,6 @@ import React from 'react';
 import LoadingPage from './LoadingPage';
 import StoryPage from './StoryPage';
 import { getStories } from '../selectors/stories';
-import localForage from "localforage";
 
 class StoriesPage extends React.Component {
    constructor(props) {
@@ -31,16 +30,18 @@ class StoriesPage extends React.Component {
 
    filterStories = () => {
       if (!this.state.filterSolved) {
-         let unsolvedStories = [];
+         let stories = [];
          this.state.stories.map((story) => {
-            localForage.getItem(`story${story.id}_solved`).then((data) => {
-               !data && unsolvedStories.push(story)
-               story.id == this.state.stories.length &&
-                  this.setState({unsolvedStories, filterSolved: true})
-            });
+            if(!localStorage.getItem(`story${story.id}_solved`))
+               return stories.push(story);
          });
+         this.setState({stories, filterSolved: true});
       } else {
-         return this.state.stories;
+         getStories().then(
+            stories => {
+               this.setState({stories, filterSolved: false});
+            }
+         )
       }
    }
 

@@ -2,7 +2,7 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
-//import stories from '../fixtures/stories'; // importing test data
+import stories from '../fixtures/stories'; // importing test data
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -20,9 +20,9 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-//  database.ref().set({
-//     stories
-//  });
+  database.ref().set({
+     stories
+  });
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
