@@ -18,13 +18,18 @@ exports[`Should render Header correctly 1`] = `
           Backstory
         </h1>
       </[object Object]>
-      <div
-        className="header__title"
+      <h1
+        className="header__text"
+        onClick={[Function]}
       >
-        <h1>
-          How to Play
-        </h1>
-      </div>
+        How to Play
+      </h1>
+    </div>
+    <div>
+      <InstructionsModal
+        handleToggleModal={[Function]}
+        showModal={false}
+      />
     </div>
   </div>
 </header>

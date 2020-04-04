@@ -7,6 +7,7 @@ exports[`Should render StoryModal correctly 1`] = `
   className="modal"
   closeTimeoutMS={200}
   isOpen={false}
+  onRequestClose={[Function]}
   parentSelector={[Function]}
   portalClassName="ReactModalPortal"
   role="dialog"
@@ -14,20 +15,59 @@ exports[`Should render StoryModal correctly 1`] = `
   shouldCloseOnOverlayClick={true}
   shouldFocusAfterRender={true}
   shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "overlay": Object {
+        "backgroundColor": "rgba(0,0,0,0.3)",
+      },
+    }
+  }
 >
-  <button
-    className="button button--standard button-modal"
-  >
-    x
-  </button>
-  <h3
-    className="modal__title"
-  >
-    Title of first story
-  </h3>
-  <PremiseView
-    premise="A premise to a story"
-    toggleShowBackstory={[Function]}
+  <span
+    className="button--close"
+    onClick={[Function]}
   />
+  <div
+    className="inner-modal"
+  >
+    <div
+      className="modal__title"
+    >
+      <img
+        alt=""
+        className="scratch-icon"
+        src="/images/scratch_red1.png"
+      />
+      <p
+        className="list-item__title"
+      >
+        Title of first story
+      </p>
+    </div>
+    <PremiseView
+      story={
+        Object {
+          "backstory": "The backstory",
+          "id": "1",
+          "premise": "A premise to a story",
+          "title": "Title of first story",
+        }
+      }
+      toggleShowBackstory={[Function]}
+    />
+    <div
+      className="list-item__small-container"
+    >
+      <label
+        className="list-item__small-text"
+      >
+        Mark as solved:
+      </label>
+      <input
+        className="list-item__checkbox"
+        type="checkbox"
+      />
+    </div>
+  </div>
 </Modal>
 `;

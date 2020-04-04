@@ -4,7 +4,7 @@ exports[`Should render Header correctly 1`] = `
 <Modal
   ariaHideApp={true}
   bodyOpenClassName="ReactModal__Body--open"
-  className="modal"
+  className="modal inner-modal modal-wide"
   closeTimeoutMS={200}
   isOpen={false}
   parentSelector={[Function]}
@@ -14,12 +14,26 @@ exports[`Should render Header correctly 1`] = `
   shouldCloseOnOverlayClick={true}
   shouldFocusAfterRender={true}
   shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "overlay": Object {
+        "backgroundColor": "rgba(0,0,0,0.25)",
+      },
+    }
+  }
 >
-  <p>
-    These are the instructions
+  <h1
+    className="header__text"
+  >
+    How to Play
+  </h1>
+  <p
+    className="modal__text-big"
+  >
+    This game can be played with two or more people.                 One person will act as game leader. This person selects a story and reads its premise                 aloud to everyone (click one of the icons on the Stories page).                 The game leader then reads the backstory to him-/herself without revealing it to the group                 (click the button labeled Backstory).                 The rest of the group then have to ask questions to the game leader                 in order to figure out what the backstory is.                 They may only ask 'yes' or 'no' questions.                 The game leader may reply to questions where incorrect assumptions have been made                 with: 'You've made an incorrect assumption'.                 If someone in the group is too scared to play, then please go easy on them.                 Just take a deep breath and try to understand that everyone may not have been blessed with                 your level of coolness.
   </p>
   <button
-    className="button"
+    className="button button--standard"
   >
     Close
   </button>

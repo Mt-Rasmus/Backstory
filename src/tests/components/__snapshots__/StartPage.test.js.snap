@@ -2,28 +2,32 @@
 
 exports[`Should render StartPage correctly 1`] = `
 <div
-  className="content-container"
+  className="start-options-layout"
 >
-  <[object Object]
-    to="/stories"
+  <div
+    className="start-options-layout__box"
   >
-    <button
-      className="button button--standard"
+    <[object Object]
+      to="/stories"
     >
-      Stories
+      <button
+        className="button button-big button--standard"
+      >
+        Stories
+      </button>
+    </[object Object]>
+    <button
+      className="button button-big button--standard"
+      onClick={[Function]}
+    >
+      How to play
     </button>
-  </[object Object]>
-  <button
-    className="button button--standard"
-    onClick={[Function]}
-  >
-    How to play
-  </button>
-  <div>
-    <InstructionsModal
-      handleToggleModal={[Function]}
-      showModal={false}
-    />
+    <div>
+      <InstructionsModal
+        handleToggleModal={[Function]}
+        showModal={false}
+      />
+    </div>
   </div>
 </div>
 `;
