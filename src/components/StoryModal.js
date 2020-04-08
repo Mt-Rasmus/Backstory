@@ -51,7 +51,7 @@ export default class StoryModal extends React.Component {
                   <input 
                      className="list-item__checkbox" 
                      type="checkbox" 
-                     onMouseDown={this.props.toggleSolved}
+                     onClick={this.props.toggleSolved}
                      defaultChecked={this.props.solved}
                   />
                </div>
